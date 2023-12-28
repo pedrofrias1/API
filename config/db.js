@@ -1,8 +1,14 @@
+require('dotenv').config();
+
+
+
 const mysql2=require('mysql2');
+
 const dbInfo={
-    host:'localhost',
-    user:'root',
-    database:'jugadores'
+    host:process.env.DB_HOST,
+    user:process.env.DB_USER,
+    database:process.env.DB_DATABASE,
+    password:process.env.DB_PASSWORD
 }
 
 const dbConnection=mysql2.createConnection(dbInfo);
